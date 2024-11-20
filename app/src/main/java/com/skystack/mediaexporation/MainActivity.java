@@ -10,9 +10,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.skystack.mediaexporation.Activties.CaptureActivity;
 import com.skystack.mediaexporation.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,7 +25,11 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 
     private final static String TAG = MainActivity.class.getName();
-    static private final String[] PERMISSION = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO};
+    static private final String[] PERMISSION = {
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.RECORD_AUDIO,
+            Manifest.permission.FOREGROUND_SERVICE
+    };
     private final static int RequestCodePermissions = 1;
 
 
@@ -35,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
 
         if (!CheckPermission()) {
             ActivityCompat.requestPermissions(this, PERMISSION, RequestCodePermissions);

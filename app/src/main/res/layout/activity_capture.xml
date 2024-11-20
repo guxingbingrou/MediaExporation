@@ -4,15 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CaptureActivity">
+    tools:context=".Activties.CaptureActivity">
 
-    <Button
-        android:id="@+id/button_start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="top|left"
-        android:text="采集音频"
-        android:textAllCaps="false"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/buttonMic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="采集Mic"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/buttonMedia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="采集媒体"
+            android:textAllCaps="false" />
+
+        ></LinearLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
